@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farl Kriston and The Entropic Mouse</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Space Mono for that 'Entropic' feel, and Work Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Work Sans', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'neuro-black': '#000000',
+                        'neuro-pink': '#FF007F',   /* Bright Pink */
+                        'neuro-violet': '#7F00FF', /* Deep Violet */
+                        'neuro-white': '#FFFFFF',
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        /* Gradient Text Utility */
+        .text-gradient {
+            background: linear-gradient(to right, #FF007F, #7F00FF, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Lyric stanza spacing */
+        .lyrics-content p {
+            margin-bottom: 2rem;
+            white-space: pre-line;
+            border-left: 1px solid rgba(127, 0, 255, 0.3);
+            padding-left: 1.5rem;
+        }
+
+        /* Glitch effect for the header */
+        .glitch-wrapper {
+            position: relative;
+        }
+        
+        /* Meme card hover effect */
+        .meme-card:hover {
+            transform: rotate(2deg) scale(1.02);
+            border-color: #FF007F;
+            box-shadow: 5px 5px 0px #7F00FF;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-neuro-pink selection:text-white">
+
+    <!-- Header / Nav -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <span class="font-mono text-xl md:text-2xl font-bold tracking-tighter text-white">
+                    FK<span class="text-neuro-pink"></span>'EM
+                </span>
+                <div class="hidden md:flex space-x-8 font-mono text-sm tracking-wide">
+                    <a href="#lyrics" class="hover:text-neuro-pink transition-colors">LYRICS</a>
+                    <a href="#memes" class="hover:text-neuro-violet transition-colors">MEME VAULT</a>
+                    <a href="#about" class="hover:text-white transition-colors">ABOUT</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-white hover:text-neuro-pink">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 pb-32 overflow-hidden">
+        <!-- Background Blobs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neuro-pink/20 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neuro-violet/30 rounded-full blur-[120px] animate-pulse-fast"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <p class="font-mono text-neuro-pink mb-4 tracking-widest text-sm md:text-base">EST. THE YEAR OF ENTROPY</p>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter mb-6 leading-none">
+                Farl Kriston<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-neuro-pink via-white to-neuro-violet">& The Entropic Mouse</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-300 font-light mb-12 max-w-2xl mx-auto">
+                    Join the Entropy movement and sing along
+                <br><span class="text-neuro-violet font-mono text-sm">Read the lyrics before the collapse.</span>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#lyrics" class="bg-neuro-white text-black hover:bg-neuro-pink hover:text-white px-8 py-4 font-mono font-bold border-2 border-white transition-all shadow-[4px_4px_0px_#7F00FF]">
+                    READ THE ARCHIVES
+                </a>
+                <a href="#memes" class="px-8 py-4 font-mono font-bold border-2 border-neuro-pink text-neuro-pink hover:bg-neuro-pink hover:text-white transition-all">
+                    ENTER THE MEME ZONE
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+            <i class="fa-solid fa-arrow-down text-neuro-pink text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- Lyrics Section -->
+    <section id="lyrics" class="py-24 bg-neuro-black border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="font-mono text-neuro-pink text-sm mb-2">THE ARCHIVES</h2>
+            <h3 class="text-4xl md:text-5xl font-black text-white mb-16">LYRICAL DATABASE</h3>
+
+            <!-- Song 1 -->
+            <article class="mb-32">
+                <div class="flex items-baseline gap-4 mb-8 border-b-2 border-neuro-pink/50 pb-4">
+                    <span class="font-mono text-neuro-pink text-xl">01.</span>
+                    <h4 class="text-3xl md:text-4xl font-bold uppercase">I did Ephys (and I liked it!)</h4>
+                </div>
+                
+                <div class="lyrics-content font-mono text-sm md:text-base text-gray-300 leading-relaxed">
+                    <p>
+                        (Verse 1)
+                        This was never the way I planned, not my intention
+                        I got so brave grant in hand, lost my discretion
+                        It's not what I'm used to, just wanna study neurons
+                        I'm curious for it, caught my attention
+                    </p>
+                    <p>
+                        (Chorus)
+                        I did ephys and I liked it, the neuron I poked was spiking
+                        I did ephys just to try it, I hope Andy Penn won't mind it
+                        It felt so wrong, it felt so right, don't mean I@ll patch clamp tonight
+                        I did ephys and I liked it
+                        I liked it
+                    </p>
+                    <p>
+                        (Verse 2)
+                        No I don't even know your genotype it doesn't matter
+                        You're my experimental game, just murine nature
+                        It's not what good mice do, not how they should behave
+                        My brain gets so confused, they don't obey
+                    </p>
+                    <p>
+                        (Chorus)
+                        I did ephys and I liked it, the neuron I poked was spiking
+                        I did ephys just to try it, I hope Andy Penn won't mind it
+                        It felt so wrong, it felt so right, don't mean I@ll patch clamp tonight
+                        I did ephys and I liked it
+                        I liked it
+                    </p>
+                    <p>
+                        (Bridge)
+                        Neurons they are so magical
+                        Soft skin, red media, so patchable
+                        Hard to approach, no giga-seal
+                        Too good to deny it
+                        Ain't no big deal it's in a 
+                        solution of appropriate osmotic potential
+                    </p>
+                    <p>
+                        (Chorus)
+                        I did ephys and I liked it, the neuron I poked was spiking
+                        I did ephys just to try it, I hope Andy Penn won't mind it
+                        It felt so wrong, it felt so right, don't mean I@ll patch clamp tonight
+                        I did ephys and I liked it
+                        I liked it
+                    </p>
+
+
+                </div>
+            </article>
+
+            <!-- Song 2 -->
+            <article class="mb-32">
+                <div class="flex items-baseline gap-4 mb-8 border-b-2 border-neuro-violet/50 pb-4">
+                    <span class="font-mono text-neuro-violet text-xl">02.</span>
+                    <h4 class="text-3xl md:text-4xl font-bold uppercase">Put on the maze light (shahd)</h4>
+                </div>
+                
+                <div class="lyrics-content font-mono text-sm md:text-base text-gray-300 leading-relaxed">
+                    <p>
+                        (Verse 1)
+                        Shahd
+                        You don't have to put on the maze light
+                        Those days are over
+                        You don't have to run the sessions through the night
+                        Shahd 
+                        You don't have to wear the scrubs tonight (Valantis)
+                        Walk the BRF for money
+                        You don't care if it's wrong or if it's right
+                        Shahd
+                        You don't have to put on the maze light
+                        Shahd
+                        You don't have to put on the maze light
+                        
+                        You don't have to 
+                    </p>
+                    <p>
+                        (Chorus)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light
+                    </p>
+                    <p>
+                        (Verse 2)
+                        I loved mice since I knew you
+                        Mice wouldn't talk down to you
+                        I have to tell you just how I feel
+                        I won't share you with another mouse.
+                        I know my mind is made up
+                        So put away your maze uh
+                        Told you once I won't tell you again
+                        It's a bad way
+
+                        Shahd
+                        You don't have to turn on the maze light
+                        Shahd
+                        You don't have to turn on the maze light
+                        
+                        You don't have to
+                    </p>
+                    <p>
+                        (Chorus)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light (Shaaahd)
+                        Put on the maze light (Shaaahd)
+                        you don't have to 
+                        Put on the maze light
+                    </p>
+
+                </div>
+            </article>
+
+            <!-- Song 3 -->
+            <article class="mb-32">
+                <div class="flex items-baseline gap-4 mb-8 border-b-2 border-neuro-violet/50 pb-4">
+                    <span class="font-mono text-neuro-violet text-xl">03.</span>
+                    <h4 class="text-3xl md:text-4xl font-bold uppercase">Amyloid Beta</h4>
+                </div>
+                
+                <div class="lyrics-content font-mono text-sm md:text-base text-gray-300 leading-relaxed">
+                    <p>
+                        (Verse 1)
+                        Another chain is folding, brain in slow decaying
+                        In my mind you're not defined it feels disorientating
+                        But you see it's not me, it is my memory
+                        In my head, in my head, they are misfolding
+                        With the hydrogen bonds break the protein backbones
+                        In our heads, in our heads, they are misfolding
+                    </p>
+                    <p>
+                        (Chorus)
+                        In our heads, in our heads
+                        Amyloid Beta 
+                        Amyloid Beta 
+                        Amyloid B B Beta
+                        
+                        What's in our heads, in our heads
+                        Amyloid Beta 
+                        Amyloid Beta 
+                        Amyloid B B Beta
+                    </p>
+                    <p>
+                        (Verse 2)
+                        Another synapse lost, disease has over taken
+                        When the plaques are slowly rising, they are aggregating
+                        It's the same old theme it's the APOE gene
+                        In our heads, in our heads, still misfolding
+                        When the hydrogen bonds break the protein backbones
+                        In our heads, in our heads, they are misfolding
+                    </p>
+                    <p>
+                        (Chorus)
+                        In our heads, in our heads
+                        Amyloid Beta 
+                        Amyloid Beta 
+                        Amyloid B B Beta
+                        
+                        What's in our heads, in our heads
+                        Amyloid Beta 
+                        Amyloid Beta 
+                        Amyloid B B Beta
+
+                        Tau Tau Tau Tau Tau Tau Tau Taaaaaau Taaaaaau
+                        
+                        In our heads, in our heads
+                        Amyloid Beta 
+                        Amyloid Beta 
+                        Amyloid B B Beta
+                        
+                        What's in our heads, in our heads
+                        Amyloid Beta 
+                        Amyloid Beta 
+                        Amyloid B B Beta
+                    </p>
+
+                </div>
+            </article>
+
+
+            <!-- Song 4 -->
+            <article class="mb-32">
+                <div class="flex items-baseline gap-4 mb-8 border-b-2 border-neuro-violet/50 pb-4">
+                    <span class="font-mono text-neuro-violet text-xl">04.</span>
+                    <h4 class="text-3xl md:text-4xl font-bold uppercase">Drive my charge</h4>
+                </div>
+                
+                <div class="lyrics-content font-mono text-sm md:text-base text-gray-300 leading-relaxed">
+                    <p>
+                        (Verse 1)
+                        Asked a peptide what she wanted to be 
+                        She said "baby, can't you see?"
+                        Im transmembranous, with ion-sensing motifs 
+                        'Cause I'm a conductive channel protein
+                    </p>
+                    <p>
+                        (Chorus)
+                        Baby, you can drive my charge
+                        Conductance propagates so far
+                        Baby, you can drive my charge
+                        And maybe I'll love you
+
+                        Peak peak, peak peak, yeah 
+                    </p>
+                    <p>
+                        (Verse 2)
+                        I told that peptide that G proteins were cool
+                        she said "signal transduction - it's understood"
+                        Medium-term transcriptional changes are all very fine
+                        But I can help you depolarise!
+                    </p>
+                    <p>
+                        (Chorus)
+                        Baby, you can drive my charge
+                        Conductance propagates so far
+                        Equilibrium potentials are
+                        The basis of resting voltage
+                        Until-mm-threshold-yeah!
+                    </p>
+                    <p>
+                        (Chorus)
+                        Baby, you can drive my charge
+                        Astrocytes are shaped like stars 
+                        Baby, you can drive my charge
+                        And maybe I'll love you
+
+                        Peak-peak-mm-peak-peak, yeah!
+                    </p>
+                    <p>
+                        (Verse 3)
+                        I told that Andy I could start right away
+                        When he said, "Listen, babe, I got something to say
+                        I got no grant and it's breaking my heart
+                        But I found Scott Kinghorn and that's a start"
+                    </p>
+                    <p>
+                        Baby, you can drive my charge
+                        Depolarise my membranes fast
+                        Baby, you can drive my charge
+                        And maybe I'll love you
+
+                        Peak-peak-mm-peak-peak yeah! X5
+                    </p>
+
+                </div>
+            </article>
+
+
+            <!-- Song 5 -->
+            <article class="mb-32">
+                <div class="flex items-baseline gap-4 mb-8 border-b-2 border-neuro-violet/50 pb-4">
+                    <span class="font-mono text-neuro-violet text-xl">05.</span>
+                    <h4 class="text-3xl md:text-4xl font-bold uppercase">LTP (Whenever, wherever)</h4>
+                </div>
+                
+                <div class="lyrics-content font-mono text-sm md:text-base text-gray-300 leading-relaxed">
+                    <p>
+                        (Verse 1)
+                        Lucky that the signal's coming through so
+                        We can change the cell resistance
+                        Lucky that the glutamate is loose so
+                        That it can bridge synaptic distance
+                        Baby, when the channels open wide
+                        The sodium can come rushing in
+                        Depolarizing CA1 from inside
+                        That is how it all begin
+
+                        AMPA NMDA
+                        AMPA NMDA
+                        can't you see
+                        It's LTP
+                    </p>
+                    <p>
+                        (Chorus)
+                        Whenever wherever two neurons fire together
+                        Neuron A and neuron B 
+                        You get some LTP
+                        
+                        It's hebbian
+                        It's plastic
+                        This process is fantastic
+                        Neuron A and Neuron B 
+                        Encoding memory
+                    </p>
+                    <p>
+                        (Verse 2)
+                        Lucky that the block begins to tumble
+                        Freeing up the pore's dimension
+                        Lucky that Magnesium is humble
+                        So that the Calcium gets attention
+                        Kinases wake up inside the cover
+                        To make it stronger when we need it
+                        these two cells are bound to one another
+                        That's how the hippocampus reads it
+
+                        AMPA NMDA
+                        AMPA NMDA
+                        can't you see
+                        It's LTP
+                    </p>
+                    <p>
+                        (Chorus)
+                        Whenever wherever two neurons fire together
+                        Neuron A and neuron B 
+                        You get some LTP
+
+                        It's hebbian
+                        It's plastic
+                        This process is fantastic
+                        Neuron A and Neuron B 
+                        Encoding memory
+                    </p>
+                    <p>
+                        (Bridge)
+                        
+                        AMPA NMDA
+                        AMPA NMDA
+                        feel it gain
+                        Synaptic weight
+                                            
+                        AMPA and the NMDA
+                        Tell me one more time
+                        All this firing
+                        Leads to more wiring!!
+                    </p>
+                    <p>
+                        (Chorus)
+                        Whenever wherever two neurons fire together
+                        Neuron A and neuron B 
+                        You get some LTP
+
+                        It's hebbian
+                        It's plastic
+                        This process is fantastic
+                        Neuron A and Neuron B 
+                        Encoding memory
+                    </p>
+
+
+                </div>
+            </article>
+            
+            <!-- Coming Soon Indicator -->
+            <div class="p-8 border border-dashed border-gray-700 text-center rounded-xl bg-gray-900/30">
+                <i class="fa-solid fa-music text-3xl text-gray-600 mb-4"></i>
+                <p class="font-mono text-gray-400">More lyrics decrypting...</p>
+                <p class="text-sm text-gray-600 mt-2">Music recordings coming soon.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MEME VAULT SECTION -->
+    <section id="memes" class="py-24 bg-gradient-to-b from-black to-gray-900 border-t border-neuro-pink">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-neuro-pink to-neuro-violet mb-4">
+                    THE MEME VAULT
+                </h2>
+                <p class="font-mono text-white">Visual data collected from the void.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Meme 1 -->
+                <div class="meme-card bg-gray-800 p-2 border-2 border-transparent transition-all duration-300">
+                    <div class="bg-black aspect-square flex items-center justify-center overflow-hidden relative">
+                         <!-- Placeholder for Meme -->
+                         <div class="absolute inset-0 flex flex-col items-center justify-center bg-neuro-white text-black p-4 text-center">
+                            <span class="font-black text-2xl uppercase mb-2">When the Entropy hits</span>
+                            <i class="fa-solid fa-face-dizzy text-6xl text-neuro-pink mb-4"></i>
+                            <span class="font-mono text-sm">"Is this art or a mistake?"</span>
+                         </div>
+                    </div>
+                    <div class="p-4 bg-gray-900">
+                        <p class="font-mono text-xs text-neuro-pink">#relatable #entropy</p>
+                    </div>
+                </div>
+
+                <!-- Meme 2 -->
+                <div class="meme-card bg-gray-800 p-2 border-2 border-transparent transition-all duration-300">
+                    <div class="bg-black aspect-square flex items-center justify-center overflow-hidden relative">
+                         <div class="absolute inset-0 flex flex-col items-center justify-center bg-neuro-black border-4 border-neuro-violet text-white p-4 text-center">
+                            <span class="font-black text-xl uppercase mb-4 text-neuro-pink">Me waiting for songs to drop</span>
+                            <div class="flex gap-2 text-4xl mb-4">
+                                <i class="fa-solid fa-skeleton text-gray-400"></i>
+                            </div>
+                            <span class="font-mono text-sm">"Just read the lyrics again."</span>
+                         </div>
+                    </div>
+                    <div class="p-4 bg-gray-900">
+                        <p class="font-mono text-xs text-neuro-violet">#soon #maybe</p>
+                    </div>
+                </div>
+
+                <!-- Meme 3 -->
+                <div class="meme-card bg-gray-800 p-2 border-2 border-transparent transition-all duration-300">
+                    <div class="bg-black aspect-square flex items-center justify-center overflow-hidden relative">
+                         <div class="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-neuro-pink to-neuro-violet p-4 text-center">
+                            <span class="font-black text-white text-3xl uppercase leading-none transform -rotate-6">Farl Kriston</span>
+                            <span class="font-mono text-xs bg-black text-white px-2 py-1 mt-2">exists</span>
+                            <span class="font-black text-white text-3xl uppercase leading-none transform rotate-6 mt-4">The Mouse</span>
+                         </div>
+                    </div>
+                    <div class="p-4 bg-gray-900">
+                        <p class="font-mono text-xs text-neuro-white">#bandlore</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="about" class="bg-black py-16 border-t border-white/10 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neuro-pink via-white to-neuro-violet"></div>
+        
+        <div class="max-w-2xl mx-auto px-4 relative z-10">
+            <h3 class="font-mono text-2xl font-bold mb-8 text-white">FK<span class="text-neuro-pink"></span>'EM</h3>
+            
+            <p class="text-gray-400 mb-8 font-light">
+                Farl Kriston and The Entropic Mouse are a conceptual noise entity based on the principles of chaos.
+            </p>
+            
+            <p class="font-mono text-xs text-gray-600">
+                &copy; 2025 Farl Kriston and The Entropic Mouse.<br>
+                Hosted on GitHub Pages. No mice were harmed.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
